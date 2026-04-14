@@ -1,0 +1,203 @@
+body{100%;align-items:center}
+.main{background-color: aquamarine;display: flex;justify-content: space-between;align-items: center;padding:0 35px;}
+.title{display: flex;align-items: center;gap: 35px;background-color: black;
+    border-radius: 15px;color: aliceblue;width: 200PX;padding: 0 25px;text-align: center;}
+    .title h1:hover{background-color: rgb(127, 255, 255);}
+.title img{width: 70px;}
+.list ul{display: flex;justify-content: space-between;gap:10px;list-style: none;}
+.list ul li{background-color: black;border-radius: 15px;}
+.list ul li:hover{background-color: rgb(127, 255, 255);}
+.list ul li a{text-decoration: none;font-size: x-large;color: aliceblue;padding: 30px;
+    }
+.imglogo{width:25px;padding: 0;}
+#searchInput {
+    width: 70%;
+    padding:8px;
+    margin-bottom: 10px;
+    border: 1px solid #dddddd11;
+    border-radius: 5px;
+    font-size: 17px;margin: 0 15px;
+    height: 15px;align-items: center;
+}
+
+.item {
+    background: #f9f9f957;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border-bottom: 5px solid #2ecc71; /* لمسة جمالية خضراء */
+}
+#contentList{display: flex;flex-wrap: wrap;justify-content: center;;gap: 75px;;padding:20px;align-items: stretch;
+    margin: 0 ;height: auto;align-items: stretch;    border-radius: 20px;
+    border-bottom: 5px solid #2ecc71; /* لمسة جمالية خضراء */
+}
+.item p{text-align: center;font-size: large;}
+input{margin: 50px;margin: 50px;padding: 0;}
+.imgs p{font-size: xx-large;}
+.item{position: relative;transition: z-index 0.3s}
+.item a img{width: 300px;;max-width: 700px; height: auto;transition: transform 0.3s ease;cursor: zoom-in;
+    object-fit: cover;}
+.item img:hover {
+  transform: scale(1.8); /* تكبير الصورة لمرة ونصف حجمها */
+  z-index: 99;           /* عشان الصورة تطلع فوق العناصر اللي حولها */
+  position: relative;    /* ضرورية لتفعيل الـ z-index */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);} /* إضافة ظل خفيف للجمالية */
+.item a{text-decoration: none;color: #333;font-size: xx-large;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+  /* تنسيقات القائمة الأساسية */
+
+.navbar {
+  background-color: #333;
+  direction: rtl; /* لدعم اللغة العربية */
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex; align-items: center;gap: 30px;
+}
+
+.nav-links li {
+  position: relative; /* مهم لضبط مكان القائمة المنسدلة */
+}
+
+.nav-links a {
+  display: block;
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.nav-links a:hover {
+  background-color: #555;
+}
+
+/* --- تنسيقات القائمة المنسدلة --- */
+
+/* إخفاء القائمة الفرعية افتراضياً */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+}
+
+/* تنسيق روابط القائمة المنسدلة */
+.dropdown-content a {
+  color: black;
+  padding: 10px 20px;
+}
+
+.dropdown-content a:hover {
+  background-color: #b81d1dad;text-align: center;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: medium;
+}
+
+/* إظهار القائمة عند تمرير الماوس (Hover) */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropbtn{font-size: large;text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+   
+
+/* الصورة الأساسية */
+.main-photo {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* حاوية الصور الصغيرة */
+.thumbnails {
+    display: flex;
+    gap: 5px;
+    justify-content: center;;
+}
+
+/* تنسيق الصور الصغيرة */
+.thumbnails img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 35px;
+    transition: 0.3s;
+}
+
+/* تمييز الصورة عند مرور الماوس */
+.thumbnails img:hover {
+    border-color: #2ecc71;
+    transform: scale(2.1);
+}
+.main-img-box{width:300px;max-width: 300px; height: auto;transition: transform 0.3s ease;cursor: zoom-in;
+    object-fit: cover;}
+
+.main-img-box:hover{
+  transform: scale(1.5); /* تكبير الصورة لمرة ونصف حجمها */
+  z-index: 99;           /* عشان الصورة تطلع فوق العناصر اللي حولها */
+  position: relative;    /* ضرورية لتفعيل الـ z-index */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);} /* إضافة ظل خفيف للجمالية */
+   /* عندما يكون عرض الشاشة 768 بكسل أو أقل (الموبايل والتابلت) */
+@media (max-width: 768px) {
+    
+    .main {
+        flex-direction: column; /* جعل اللوجو والقائمة فوق بعضهما */
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .list ul {
+        flex-direction: column; /* القائمة تصبح عمودية */
+        width: 100%;
+        padding: 0;
+    }
+
+    .list ul li {
+        width: 100%; /* الروابط تأخذ العرض كاملاً */
+        text-align: center;
+    }
+
+    .title {
+        width: 90%; /* تكبير عنوان الموقع ليتناسب مع الشاشة الصغيرة */
+        justify-content: center;
+    }
+
+    #searchInput {
+        width: 90%; /* جعل شريط البحث عريضاً لسهولة اللمس */
+        margin: 10px auto;
+    }
+
+    #contentList {
+        padding: 10px;
+        height: auto;
+    }
+
+    .item {
+        width: 100%; /* كل عنصر (صورة) يأخذ عرض الشاشة كاملاً */
+    }
+
+    .item a img {
+        max-width: 100%; /* منع الصورة من الخروج عن حدود الشاشة */
+        height: auto; /* الحفاظ على أبعاد الصورة */
+    }
+
+    .item a img:hover {
+        transform: scale(1.05); /* تقليل التكبير في الموبايل لأنه يسبب مشاكل في اللمس */
+    }
+}
+/* حاوية المنتج */
+.product-container {
+    display: flex;
+    flex-direction: column; /* لجعل الصور الصغيرة أسفل الكبيرة، أو استخدم row لجعلها بجانبها */
+    gap: 20px;
+    align-items: center;    border-radius: 20px;
+    border-bottom: 5px solid #2ecc71; /* لمسة جمالية خضراء */
+}
+}

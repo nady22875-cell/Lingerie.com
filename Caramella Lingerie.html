@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="main">
+    <div class="title">
+        <h1>Lingerie.com</h1>
+        <img src="img/logo.jpg"/>
+    </div>
+    <div class="list">
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="Caramella Lingerie.html">Caramella Lingerie</a></li>
+
+        </ul>
+
+    </div>
+
+  </div> 
+ <nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="index.html">الرئيسية</a></li>
+    
+    <li class="dropdown">
+      <a href="#" class="dropbtn">brand ▼</a>
+      <ul class="dropdown-content">
+        <li><a href="Caramella Lingerie.html"> Caramella Lingerie </a></li>
+      </ul>
+    </li>
+  <input type="text" id="searchInput" placeholder="ابحث في الصفحة..." onkeyup="searchFunction()"> 
+  </ul>
+</nav>
+<div id="contentList">
+ <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2120.jpg" id="mainImg2120" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2120.jpg" onclick="changeImage('mainImg1', this.src)" alt="thumb2120">
+        </div>
+        <p>model//2120</p>
+    </div>
+    <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2119 red.jpg" id="mainImg1" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2119 red.jpg" onclick="changeImage('mainImg1', this.src)" alt="thumb1">
+            <img src="img/2119 blue.jpg" onclick="changeImage('mainImg1', this.src)" alt="thumb2">
+            <img src="img/2119 black.jpg" onclick="changeImage('mainImg1', this.src)" alt="thumb3">
+        </div>
+        <p>model//2119</p>
+    </div>
+    <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2118 red.jpg" id="mainImg2118" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2118 red.jpg" onclick="changeImage('mainImg2118', this.src)" alt="thumb1">
+            <img src="img/2118 blue.jpg" onclick="changeImage('mainImg2118', this.src)" alt="thumb2">
+            <img src="img/2118 black.jpg" onclick="changeImage('mainImg2118', this.src)" alt="thumb3">
+        </div>
+        <p>model//2118</p>
+    </div>
+<div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2117.jpg" id="mainImg2117" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2117.jpg" onclick="changeImage('mainImg2117', this.src)" alt="thumb1">
+        </div>
+        <p>model//2117</p>
+    </div>
+    <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2116 white.jpg" id="mainImg2116" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2116 white.jpg" onclick="changeImage('mainImg2116', this.src)" alt="thumb1">
+            <img src="img/2116 red.jpg" onclick="changeImage('mainImg2116', this.src)" alt="thumb1">
+            <img src="img/2116 black.jpg" onclick="changeImage('mainImg2116', this.src)" alt="thumb1">
+        </div>
+        <p>model//2116</p>
+    </div>
+        <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2115 black-red.jpg" id="mainImg2115" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2115 black-red.jpg" onclick="changeImage('mainImg2115', this.src)" alt="thumb1">
+            <img src="img/2115 black-d-red.jpg" onclick="changeImage('mainImg2115', this.src)" alt="thumb1">
+            <img src="img/2115 black-blue.jpg" onclick="changeImage('mainImg2115', this.src)" alt="thumb1">
+        </div>
+        <p>model//2115</p>
+    </div>
+        <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2113 red.jpg" id="mainImg2113" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2113 red.jpg" onclick="changeImage('mainImg2113', this.src)" alt="thumb1">
+            <img src="img/2113 blue.jpg" onclick="changeImage('mainImg2113', this.src)" alt="thumb1">
+            <img src="img/2113 black.jpg" onclick="changeImage('mainImg2113', this.src)" alt="thumb1">
+        </div>
+        <p>model//2113</p>
+    </div>
+        <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2112 blue.jpg" id="mainImg2112" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2112 red.jpg" onclick="changeImage('mainImg2112', this.src)" alt="thumb1">
+            <img src="img/2112 blue.jpg" onclick="changeImage('mainImg2112', this.src)" alt="thumb1">
+        </div>
+        <p>model//2112</p>
+    </div>
+        <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2111 red.jpg" id="mainImg2111" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2111 red.jpg" onclick="changeImage('mainImg2111', this.src)" alt="thumb1">
+            <img src="img/2111 blue.jpg" onclick="changeImage('mainImg2111', this.src)" alt="thumb1">
+            <img src="img/2111 black.jpg" onclick="changeImage('mainImg2111', this.src)" alt="thumb1">
+        </div>
+        <p>model//2111</p>
+    </div>
+          <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2110 red.jpg" id="mainImg2110" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2110 red.jpg" onclick="changeImage('mainImg2110', this.src)" alt="thumb1">
+            <img src="img/2110 black.jpg" onclick="changeImage('mainImg2110', this.src)" alt="thumb1">
+        </div>
+        <p>model//2110</p>
+    </div>
+          <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2109 eggplant.jpg" id="mainImg2109" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2109 eggplant.jpg" onclick="changeImage('mainImg2109', this.src)" alt="thumb1">
+            <img src="img/2109 red.jpg" onclick="changeImage('mainImg2109', this.src)" alt="thumb1">
+        </div>
+        <p>model//2109</p>
+    </div>
+          <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2108 blue.jpg" id="mainImg2108" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2108 blue.jpg" onclick="changeImage('mainImg2108', this.src)" alt="thumb1">
+            <img src="img/2108 red.jpg" onclick="changeImage('mainImg2108', this.src)" alt="thumb1">
+            <img src="img/2108 black.jpg" onclick="changeImage('mainImg2108', this.src)" alt="thumb1">
+        </div>
+        <p>model//2108</p>
+    </div>
+          <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2107 green.jpg" id="mainImg2107" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2107 green.jpg" onclick="changeImage('mainImg2107', this.src)" alt="thumb1">
+            <img src="img/2107 red.jpg" onclick="changeImage('mainImg2107', this.src)" alt="thumb1">
+            <img src="img/2107 blue.jpg" onclick="changeImage('mainImg2107', this.src)" alt="thumb1">
+        </div>
+        <p>model//2107</p>
+    </div>
+          <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2106 black.jpg" id="mainImg2106" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2106 black.jpg" onclick="changeImage('mainImg2106', this.src)" alt="thumb1">
+            <img src="img/2106 blue.jpg" onclick="changeImage('mainImg2106', this.src)" alt="thumb1">
+            <img src="img/2106 d-red.jpg" onclick="changeImage('mainImg2106', this.src)" alt="thumb1">
+            <img src="img/2106 red.jpg" onclick="changeImage('mainImg2106', this.src)" alt="thumb1">
+        </div>
+        <p>model//2106</p>
+    </div>
+       <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2105 eggplant.jpg" id="mainImg2105" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2105 eggplant.jpg" onclick="changeImage('mainImg2105', this.src)" alt="thumb1">
+            <img src="img/2105 green.jpg" onclick="changeImage('mainImg2105', this.src)" alt="thumb1">
+            <img src="img/2105 red.jpg" onclick="changeImage('mainImg2105', this.src)" alt="thumb1">
+            <img src="img/2105 blue.jpg" onclick="changeImage('mainImg2105', this.src)" alt="thumb1">
+        </div>
+        <p>model//2105</p>
+    </div>
+           <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2104 red.jpg" id="mainImg2104" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2104 red.jpg" onclick="changeImage('mainImg2104', this.src)" alt="thumb1">
+            <img src="img/2104 blue.jpg" onclick="changeImage('mainImg2104', this.src)" alt="thumb1">
+        </div>
+        <p>model//2104</p>
+    </div>
+           <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2103 green.jpg" id="mainImg2103" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2103 green.jpg" onclick="changeImage('mainImg2103', this.src)" alt="thumb1">
+            <img src="img/2103 red.jpg" onclick="changeImage('mainImg2103', this.src)" alt="thumb1">
+        </div>
+        <p>model//2103</p>
+    </div>
+           <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2102 black.jpg" id="mainImg2102" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2102 black.jpg" onclick="changeImage('mainImg2102', this.src)" alt="thumb1">
+            <img src="img/2102 red.jpg" onclick="changeImage('mainImg2102', this.src)" alt="thumb1">
+        </div>
+        <p>model//2102</p>
+    </div>
+           <div class="product-container">
+        <div class="main-img-box">
+            <img src="img/2101 red.jpg" id="mainImg2101" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="img/2101 red.jpg" onclick="changeImage('mainImg2101', this.src)" alt="thumb1">
+            <img src="img/2101 blue.jpg" onclick="changeImage('mainImg2101', this.src)" alt="thumb1">
+        </div>
+        <p>model//2101</p>
+    </div>
+
+    
+</div>
+</body>
