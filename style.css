@@ -1,15 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden; /* بيمنع التمرير العرضي تماماً */
+    width: 100%;
+}
 body{100%;align-items:center}
-.main{background-color: aquamarine;display: flex;justify-content: space-between;align-items: center;padding:0 35px;}
-.title{display: flex;align-items: center;gap: 35px;background-color: black;
-    border-radius: 15px;color: aliceblue;width: 200PX;padding: 0 25px;text-align: center;}
+.main{background-color: rgb(255, 127, 206);display: flex;justify-content: space-between
+  ;align-items: center;padding:0 20px;}
+.title{display: flex;align-items: center;gap: 35px;background-color: rgb(184, 28, 119);
+    border-radius: 15px;color: rgb(41, 6, 136);width: 250PX;padding:20px;text-align: center;}
     .title h1:hover{background-color: rgb(127, 255, 255);}
 .title img{width: 70px;}
 .list ul{display: flex;justify-content: space-between;gap:10px;list-style: none;}
-.list ul li{background-color: black;border-radius: 15px;}
-.list ul li:hover{background-color: rgb(127, 255, 255);}
+.list ul li{background-color: rgb(54, 7, 82);border-radius: 15px;}
+.list ul li:hover{background-color: rgb(255, 127, 197);}
 .list ul li a{text-decoration: none;font-size: x-large;color: aliceblue;padding: 30px;
     }
-.imglogo{width:25px;padding: 0;}
+.imglogo{width:15px;padding:0;}
 #searchInput {
     width: 70%;
     padding:8px;
@@ -116,7 +125,7 @@ input{margin: 50px;margin: 50px;padding: 0;}
 /* حاوية الصور الصغيرة */
 .thumbnails {
     display: flex;
-    gap: 5px;
+    gap: 10px;
     justify-content: center;;
 }
 
@@ -130,6 +139,7 @@ input{margin: 50px;margin: 50px;padding: 0;}
     border-radius: 35px;
     transition: 0.3s;
 }
+a img {width:40px;height: 40px;}
 
 /* تمييز الصورة عند مرور الماوس */
 .thumbnails img:hover {
@@ -189,16 +199,16 @@ input{margin: 50px;margin: 50px;padding: 0;}
     }
 
     .item a img:hover {
-        transform: scale(1.05); /* تقليل التكبير في الموبايل لأنه يسبب مشاكل في اللمس */
+        transform: scale(0.7); /* تقليل التكبير في الموبايل لأنه يسبب مشاكل في اللمس */
     }
 }
 /* حاوية المنتج */
 .product-container {
     display: flex;
     flex-direction: column; /* لجعل الصور الصغيرة أسفل الكبيرة، أو استخدم row لجعلها بجانبها */
-    gap: 20px;
+    gap: 5px;
     align-items: center;    border-radius: 20px;
-    border-bottom: 5px solid #2ecc71; /* لمسة جمالية خضراء */
+    border-bottom: 5px solid #cc2ea4; /* لمسة جمالية خضراء */
 }
 }
 .marquee-wrapper {
@@ -211,7 +221,7 @@ input{margin: 50px;margin: 50px;padding: 0;}
   display: flex;
   
   /* --- كود التثبيت في الأعلى --- */
-  position: fixed;   /* يجعل الشريط ثابتاً */
+  object-view-box: calc();   /* يجعل الشريط ثابتاً */
   top: 0;            /* يلتصق بأعلى الشاشة تماماً */
   left: 0;           /* يبدأ من أقصى اليسار */
   z-index: 9999;     /* يضمن ظهور الشريط فوق أي محتوى آخر في الموقع */
@@ -221,7 +231,7 @@ input{margin: 50px;margin: 50px;padding: 0;}
 .marquee-content {
   display: flex;
   white-space: nowrap;
-  animation: scroll-to-right 15s linear infinite; /* سرعة الحركة */
+  animation: scroll-to-right 7s linear infinite; /* سرعة الحركة */
 }
 
 .marquee-content span {
