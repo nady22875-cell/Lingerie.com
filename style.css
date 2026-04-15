@@ -28,14 +28,14 @@ body{100%;align-items:center}
     border-bottom: 5px solid #2ecc71; /* لمسة جمالية خضراء */
 }
 #contentList{display: flex;flex-wrap: wrap;justify-content: center;;gap: 75px;;padding:20px;align-items: stretch;
-    margin: 0 ;height: auto;align-items: stretch;    border-radius: 20px;
+    margin: 0 ;height: auto;   border-radius: 30px;
     border-bottom: 5px solid #2ecc71; /* لمسة جمالية خضراء */
 }
-.item p{text-align: center;font-size: large;}
+.item p{text-align: center ;font-size: xx-large;}
 input{margin: 50px;margin: 50px;padding: 0;}
 .imgs p{font-size: xx-large;}
 .item{position: relative;transition: z-index 0.3s}
-.item a img{width: 300px;;max-width: 700px; height: auto;transition: transform 0.3s ease;cursor: zoom-in;
+.item a img{width: 420px;;max-width: 700px; height: auto;transition: transform 0.3s ease;cursor: zoom-in;
     object-fit: cover;}
 .item img:hover {
   transform: scale(1.8); /* تكبير الصورة لمرة ونصف حجمها */
@@ -200,4 +200,54 @@ input{margin: 50px;margin: 50px;padding: 0;}
     align-items: center;    border-radius: 20px;
     border-bottom: 5px solid #2ecc71; /* لمسة جمالية خضراء */
 }
+}
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background-color: #ff4d94; /* لون الخلفية */
+  color: white;
+  padding: 10px 0;
+  white-space: nowrap;
+  display: flex;
+  
+  /* --- كود التثبيت في الأعلى --- */
+  position: fixed;   /* يجعل الشريط ثابتاً */
+  top: 0;            /* يلتصق بأعلى الشاشة تماماً */
+  left: 0;           /* يبدأ من أقصى اليسار */
+  z-index: 9999;     /* يضمن ظهور الشريط فوق أي محتوى آخر في الموقع */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* ظل خفيف لتمييز الشريط */
+}
+
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll-to-right 15s linear infinite; /* سرعة الحركة */
+}
+
+.marquee-content span {
+  font-size: 30px; /* حجم الخط */
+  font-weight: bold;
+  padding-right: 100px; /* المسافة بين النصين لضمان التتابع */
+  font-family: 'Arial', sans-serif;
+}
+
+/* حركة التتابع من اليسار لليمين */
+@keyframes scroll-to-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* توقف الحركة عند وضع الماوس */
+.marquee-wrapper:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+/* نصيحة تقنية: أضف padding-top لجسم الصفحة (body) 
+   حتى لا يغطي الشريط الثابت المحتوى الموجود في أعلى موقعك */
+body {
+  padding-top: 10px; 
 }
