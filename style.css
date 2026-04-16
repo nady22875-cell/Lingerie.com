@@ -159,52 +159,63 @@ a img {width:40px;height: 40px;}
   z-index: 99;           /* عشان الصورة تطلع فوق العناصر اللي حولها */
   position: relative;    /* ضرورية لتفعيل الـ z-index */
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);} /* إضافة ظل خفيف للجمالية */
-   /* عندما يكون عرض الشاشة 768 بكسل أو أقل (الموبايل والتابلت) */
-@media (max-width: 100%) {
+  /* استخدام 768px للموبايل والتابلت */
+@media screen and (max-width: 768px) {
     
+    /* لضمان عدم خروج أي عنصر عن حدود الشاشة */
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        overflow-x: hidden; /* منع التمرير الجانبي */
+    }
+
     .main {
-        flex-direction: column; /* جعل اللوجو والقائمة فوق بعضهما */
-        padding: 20px;
-        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        width: 100%;
     }
 
     .list ul {
-        flex-direction: column; /* القائمة تصبح عمودية */
-        width: 100%;
+        display: flex;
+        flex-direction: column;
         padding: 0;
+        width: 100%;
+        gap: 15px;
     }
 
     .list ul li {
-        width: 100%; /* الروابط تأخذ العرض كاملاً */
+        list-style: none;
+        width: 100%;
         text-align: center;
     }
 
-    .title {
-        width: 90%; /* تكبير عنوان الموقع ليتناسب مع الشاشة الصغيرة */
-        justify-content: center;
-    }
-
-    #searchInput {
-        width: 90%; /* جعل شريط البحث عريضاً لسهولة اللمس */
-        margin: 10px auto;
-    }
-
-    #contentList {
-        padding: 10px;
-        height: auto;
+    /* تعديل العناوين وشريط البحث لضمان ظهورها */
+    .title, #searchInput {
+        width: 100%;
+        max-width: 100%; /* لضمان عدم تخطي الحدود */
+        display: block;
+        margin: 10px 0;
     }
 
     .item {
-        width: 100%; /* كل عنصر (صورة) يأخذ عرض الشاشة كاملاً */
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 20px;
     }
 
-    .item a img {
-        max-width: 100%; /* منع الصورة من الخروج عن حدود الشاشة */
-        height: auto; /* الحفاظ على أبعاد الصورة */
+    .item img {
+        width: 100% !important; /* إجبار الصورة على أخذ عرض الشاشة */
+        height: auto !important;
+        display: block;
     }
 
+    /* إلغاء أي تحويلات تعيق الرؤية على الموبايل */
     .item a img:hover {
-        transform: scale(0.5); /* تقليل التكبير في الموبايل لأنه يسبب مشاكل في اللمس */
+        transform: none; 
     }
 }
 /* حاوية المنتج */
