@@ -36,18 +36,18 @@ body{100%;align-items:center}
     border-radius: 20px;
     border-bottom: 5px solid #2ecc71; /* لمسة جمالية خضراء */
 }
-#contentList{display: flex;flex-wrap: wrap;justify-content: center;;gap: 75px;;padding:20px;align-items: stretch;
+#contentList{display: flex;flex-wrap: wrap;justify-content: center;;gap: 70px;;padding:30px;align-items: stretch;
     margin: 0 ;height: auto;   border-radius: 30px;
-    border-bottom: 5px solid #2ecc71; /* لمسة جمالية خضراء */
+    border-bottom: 5px solid #cc2ea4; /* لمسة جمالية خضراء */
 }
 .item p{text-align: center ;font-size: xx-large;}
 input{margin: 50px;margin: 50px;padding: 0;}
 .imgs p{font-size: xx-large;}
 .item{position: relative;transition: z-index 0.3s}
-.item a img{width: 420px;;max-width: 700px; height: auto;transition: transform 0.3s ease;cursor: zoom-in;
+.item a img{width: 4000px;;max-width: 350px; height: auto;transition: transform 0.3s ease;cursor: zoom-in;
     object-fit: cover;}
 .item img:hover {
-  transform: scale(1.8); /* تكبير الصورة لمرة ونصف حجمها */
+  transform: scale(1.5); /* تكبير الصورة لمرة ونصف حجمها */
   z-index: 99;           /* عشان الصورة تطلع فوق العناصر اللي حولها */
   position: relative;    /* ضرورية لتفعيل الـ z-index */
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);} /* إضافة ظل خفيف للجمالية */
@@ -117,6 +117,7 @@ input{margin: 50px;margin: 50px;padding: 0;}
 .main-photo {
     width: 300px;
     height: auto;
+    min-height: 450px;
     object-fit: cover;
     border-radius: 10px;
     transition: 0.3s;
@@ -140,6 +141,10 @@ input{margin: 50px;margin: 50px;padding: 0;}
     transition: 0.3s;
 }
 a img {width:40px;height: 40px;}
+.product-container a img:hover {
+    border-color: #2ecc71;
+    transform: scale(1.5);border-radius:100px;
+}
 
 /* تمييز الصورة عند مرور الماوس */
 .thumbnails img:hover {
@@ -210,6 +215,8 @@ a img {width:40px;height: 40px;}
     align-items: center;    border-radius: 20px;
     border-bottom: 5px solid #cc2ea4; /* لمسة جمالية خضراء */
 }
+.product-container p{text-decoration: none;color: #333;font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
 }
 .marquee-wrapper {
   width: 100%;
@@ -260,4 +267,45 @@ a img {width:40px;height: 40px;}
    حتى لا يغطي الشريط الثابت المحتوى الموجود في أعلى موقعك */
 body {
   padding-top: 10px; 
+}
+.social-float-wrapper {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column; /* ترتيب الأزرار فوق بعضها */
+    gap: 15px; /* المسافة بين الزرين */
+    z-index: 9999;
+}
+
+.float-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.float-btn:hover {
+    transform: scale(1.5); /* تكبير بسيط عند مرور الماوس */
+}
+
+.float-btn img {
+    width: 40px;
+    height: 40px;
+}
+
+/* ألوان الأيقونات */
+.whatsapp {
+    background-color: #25d366;
+}
+
+.telegram {
+    background-color: #0088cc;
+}
+.messenger {
+    background-color: #0084ff; /* لون الماسنجر الرسمي */
 }

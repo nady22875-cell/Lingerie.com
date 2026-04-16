@@ -15,17 +15,15 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-   <div class="main">
+  <div class="main">
     <div class="title">
         <h1>Lingerie.com</h1>
         <img src="img/logo.jpg"/>
     </div>
     <div class="list">
         <ul>
-            <li><a href="#">home</a></li>
+            <li><a href="index.html">home</a></li>
             <li><a href="CaramellaLingerie.html">Caramella Lingerie</a></li>
-            <li><a href="mystar.html">my star</a></li>
-       
 
         </ul>
 
@@ -39,7 +37,7 @@
     <li class="dropdown">
       <a href="#" class="dropbtn">brand ▼</a>
       <ul class="dropdown-content">
-            <li><a href="Caramella Lingerie.html">Caramella Lingerie</a></li>          
+        <li><a href="Caramella Lingerie.html"> Caramella Lingerie </a></li>
       </ul>
     </li>
   <input type="text" id="searchInput" placeholder="ابحث في الصفحة..." onkeyup="searchFunction()"> 
@@ -50,14 +48,6 @@
     <span>للطلب والاستفسار يرجي يرجي مرسلتنا علي الارقام 01127597821-01128778402</span>
     <span>للطلب والاستفسار يرجي يرجي مرسلتنا علي الارقام 01127597821-01128778402</span>
   </div>
-</div>
-
-<div id="contentList">
-    <div class="item"><a href="Caramella Lingerie.html"><img src="img/logo.jpg">
-        <p>caramella lingerie brand</p></a></div>
-    <div class="item"><a href="mystar.html"><img src="my star/photo_2023-11-07_21-33-11.jpg">
-        <p>my star brand</p></a></div>
-</div>
 <div class="social-float-wrapper">
     
     <a href="https://wa.me/201012345678" class="float-btn whatsapp" target="_blank">
@@ -70,5 +60,15 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger">
     </a> 
 </div>
-</body>
-</html>
+<div id="contentList">
+ <div class="product-container">
+        <div class="main-img-box">
+            <img src="my star/photo_2023-11-07_21-33-11.jpg" id="mainImg1" class="main-photo" alt="Main Image">
+        </div>
+
+        <div class="thumbnails">
+            <img src="my star/photo_2023-11-07_21-33-11.jpg" onclick="changeImage('mainImg1', this.src)" alt="thumb2120">
+        </div>
+        <p>model</p>
+        
+    </div>
