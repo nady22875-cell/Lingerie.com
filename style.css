@@ -160,7 +160,7 @@ a img {width:40px;height: 40px;}
   position: relative;    /* ضرورية لتفعيل الـ z-index */
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);} /* إضافة ظل خفيف للجمالية */
    /* عندما يكون عرض الشاشة 768 بكسل أو أقل (الموبايل والتابلت) */
-@media (max-width: 768px) {
+@media (max-width: 100%) {
     
     .main {
         flex-direction: column; /* جعل اللوجو والقائمة فوق بعضهما */
@@ -204,7 +204,7 @@ a img {width:40px;height: 40px;}
     }
 
     .item a img:hover {
-        transform: scale(0.7); /* تقليل التكبير في الموبايل لأنه يسبب مشاكل في اللمس */
+        transform: scale(0.5); /* تقليل التكبير في الموبايل لأنه يسبب مشاكل في اللمس */
     }
 }
 /* حاوية المنتج */
