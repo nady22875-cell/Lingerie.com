@@ -437,7 +437,15 @@ a img {width:40px;height: 40px;}
     gap: 5px; /* المسافة بين الزرين */
     z-index: 9999;
     }
-
+    .marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background-color: #ff4d94; /* لون الخلفية */
+  color: white;
+  padding: 10px 0;
+  white-space: nowrap;
+  display: flex;
+  
     .list ul {
         display: flex;
         flex-direction: column;
@@ -488,7 +496,6 @@ a img {width:40px;height: 40px;}
 }
 .product-container p{text-decoration: none;color: #333;font-size: large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
-}
 .marquee-wrapper {
   width: 100%;
   overflow: hidden;
