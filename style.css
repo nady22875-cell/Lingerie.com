@@ -491,7 +491,7 @@ a img {width:40px;height: 40px;}
     flex-direction: column; /* لجعل الصور الصغيرة أسفل الكبيرة، أو استخدم row لجعلها بجانبها */
     gap: 5px;
     align-items: center;    border-radius: 20px;
-    border-bottom: 5px solid #cc2ea4; /* لمسة جمالية خضراء */
+    border-bottom: 5px solid #cc2e78; /* لمسة جمالية خضراء */
     max-width: 350px;
 }
 .product-container p{text-decoration: none;color: #333;font-size: large;
