@@ -80,6 +80,198 @@ input{margin: 50px;margin: 50px;padding: 0;}
 .nav-links a:hover {
   background-color: #555;
 }
+.item {
+    background: #f9f9f957;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border-bottom: 5px solid #2ecc71; /* لمسة جمالية خضراء */
+}
+#contentList{display: flex;flex-wrap: wrap;justify-content: center;;gap: 70px;;padding:30px;align-items: stretch;
+    margin: 0 ;height: auto;   border-radius: 30px;
+    border-bottom: 5px solid #cc2ea4; /* لمسة جمالية خضراء */
+}
+.item p{text-align: center ;font-size: xx-large;}
+input{margin: 50px;margin: 50px;padding: 0;}
+.imgs p{font-size: xx-large;}
+.item{position: relative;transition: z-index 0.3s}
+.item a img{width: 4000px;;max-width: 350px; height: auto;transition: transform 0.3s ease;cursor: zoom-in;
+    object-fit: cover;}
+.item img:hover {
+  transform: scale(1.5); /* تكبير الصورة لمرة ونصف حجمها */
+  z-index: 99;           /* عشان الصورة تطلع فوق العناصر اللي حولها */
+  position: relative;    /* ضرورية لتفعيل الـ z-index */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);} /* إضافة ظل خفيف للجمالية */
+.item a{text-decoration: none;color: #333;font-size: xx-large;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+  /* تنسيقات القائمة الأساسية */
+
+.navbar {
+  background-color: #333;
+  direction: rtl; /* لدعم اللغة العربية */
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex; align-items: center;gap: 30px;
+}
+
+.nav-links li {
+  position: relative; /* مهم لضبط مكان القائمة المنسدلة */
+}
+
+.nav-links a {
+  display: block;
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.nav-links a:hover {
+  background-color: #555;
+}
+
+/* --- تنسيقات القائمة المنسدلة --- */
+
+/* إخفاء القائمة الفرعية افتراضياً */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+}
+
+/* تنسيق روابط القائمة المنسدلة */
+.dropdown-content a {
+  color: black;
+  padding: 10px 20px;
+}
+
+.dropdown-content a:hover {
+  background-color: #b81d1dad;text-align: center;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: medium;
+}
+
+/* إظهار القائمة عند تمرير الماوس (Hover) */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropbtn{font-size: large;text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+   
+
+/* الصورة الأساسية */
+.main-photo {
+    width: 300px;
+    height: auto;
+    min-height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* حاوية الصور الصغيرة */
+.thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;;
+}
+
+/* تنسيق الصور الصغيرة */
+.thumbnails img {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 35px;
+    transition: 0.3s;
+}
+a img {width:25px;height: 25px;}
+.product-container a img:hover {
+    border-color: #2ecc71;
+    transform: scale(1.5);border-radius:100px;
+}
+
+/* تمييز الصورة عند مرور الماوس */
+.thumbnails img:hover {
+    border-color: #2ecc71;
+    transform: scale(2.1);
+}
+.main-img-box{width:300px;max-width: 300px; height: auto;transition: transform 0.3s ease;cursor: zoom-in;
+    object-fit: cover;}
+
+.main-img-box:hover{
+  transform: scale(1.5); /* تكبير الصورة لمرة ونصف حجمها */
+  z-index: 99;           /* عشان الصورة تطلع فوق العناصر اللي حولها */
+  position: relative;    /* ضرورية لتفعيل الـ z-index */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);} /* إضافة ظل خفيف للجمالية */
+  /* استخدام 768px للموبايل والتابلت */
+@media screen and (max-width: 400px) {
+    
+    /* لضمان عدم خروج أي عنصر عن حدود الشاشة */
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        overflow-x: hidden; /* منع التمرير الجانبي */
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        width: 100%;
+    }
+
+    .list ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .list ul li {
+        list-style: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* تعديل العناوين وشريط البحث لضمان ظهورها */
+    .title, #searchInput {
+        width: 100%;
+        max-width: 100%; /* لضمان عدم تخطي الحدود */
+        display: block;
+        margin: 10px 0;
+    }
+
+    .item {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 20px;
+    }
+
+    .item img {
+        width: 100% !important; /* إجبار الصورة على أخذ عرض الشاشة */
+        height: auto !important;
+        display: block;
+    }
+
+    /* إلغاء أي تحويلات تعيق الرؤية على الموبايل */
+    .item a img:hover {
+        transform: none; 
+    }
+}
 
 /* --- تنسيقات القائمة المنسدلة --- */
 
@@ -142,7 +334,7 @@ input{margin: 50px;margin: 50px;padding: 0;}
 }
 a img {width:40px;height: 40px;}
 .product-container a img:hover {
-    border-color: #2ecc71;
+    border-color: #cc2eb7;
     transform: scale(1.5);border-radius:100px;
 }
 
@@ -218,6 +410,73 @@ a img {width:40px;height: 40px;}
         transform: none; 
     }
 }
+@media screen and (max-width: 400px) {
+    
+    /* لضمان عدم خروج أي عنصر عن حدود الشاشة */
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        overflow-x: hidden; /* منع التمرير الجانبي */
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        width: 100%;
+    }
+    .social-float-wrapper {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column; /* ترتيب الأزرار فوق بعضها */
+    gap: 5px; /* المسافة بين الزرين */
+    z-index: 9999;
+    }
+
+    .list ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .list ul li {
+        list-style: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* تعديل العناوين وشريط البحث لضمان ظهورها */
+    .title, #searchInput {
+        width: 100%;
+        max-width: 100%; /* لضمان عدم تخطي الحدود */
+        display: block;
+        margin: 10px 0;
+    }
+
+    .item {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 20px;
+    }
+
+    .item img {
+        width: 100% !important; /* إجبار الصورة على أخذ عرض الشاشة */
+        height: auto !important;
+        display: block;
+    }
+
+    /* إلغاء أي تحويلات تعيق الرؤية على الموبايل */
+    .item a img:hover {
+        transform: none; 
+    }
+}
 /* حاوية المنتج */
 .product-container {
     display: flex;
@@ -225,6 +484,7 @@ a img {width:40px;height: 40px;}
     gap: 5px;
     align-items: center;    border-radius: 20px;
     border-bottom: 5px solid #cc2ea4; /* لمسة جمالية خضراء */
+    max-width: 350px;
 }
 .product-container p{text-decoration: none;color: #333;font-size: large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
