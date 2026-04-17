@@ -214,154 +214,14 @@ a img {width:25px;height: 25px;}
   position: relative;    /* ضرورية لتفعيل الـ z-index */
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);} /* إضافة ظل خفيف للجمالية */
   /* استخدام 768px للموبايل والتابلت */
-@media screen and (max-width: 400px) {
-    
-    /* لضمان عدم خروج أي عنصر عن حدود الشاشة */
-    * {
-        box-sizing: border-box;
-    }
 
-    body {
-        overflow-x: hidden; /* منع التمرير الجانبي */
-    }
-
-    .main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 15px;
-        width: 100%;
-    }
-
-    .list ul {
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-        width: 100%;
-        gap: 15px;
-    }
-
-    .list ul li {
-        list-style: none;
-        width: 100%;
-        text-align: center;
-    }
-
-    /* تعديل العناوين وشريط البحث لضمان ظهورها */
-    .title, #searchInput {
-        width: 100%;
-        max-width: 100%; /* لضمان عدم تخطي الحدود */
-        display: block;
-        margin: 10px 0;
-    }
-
-    .item {
-        width: 100%;
-        padding: 5px;
-        margin-bottom: 20px;
-    }
-
-    .item img {
-        width: 100% !important; /* إجبار الصورة على أخذ عرض الشاشة */
-        height: auto !important;
-        display: block;
-    }
-
-    /* إلغاء أي تحويلات تعيق الرؤية على الموبايل */
-    .item a img:hover {
-        transform: none; 
-    }
-}
-
-/* --- تنسيقات القائمة المنسدلة --- */
-
-/* إخفاء القائمة الفرعية افتراضياً */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 1;
-  list-style: none;
-  padding: 0;
-}
-
-/* تنسيق روابط القائمة المنسدلة */
-.dropdown-content a {
-  color: black;
-  padding: 10px 20px;
-}
-
-.dropdown-content a:hover {
-  background-color: #b81d1dad;text-align: center;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: medium;
-}
-
-/* إظهار القائمة عند تمرير الماوس (Hover) */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-.dropbtn{font-size: large;text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
-   
-
-/* الصورة الأساسية */
-.main-photo {
-    width: 300px;
-    height: auto;
-    min-height: 450px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-/* حاوية الصور الصغيرة */
-.thumbnails {
-    display: flex;
-    gap: 10px;
-    justify-content: center;;
-}
-
-/* تنسيق الصور الصغيرة */
-.thumbnails img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    cursor: pointer;
-    border: 2px solid transparent;
-    border-radius: 35px;
-    transition: 0.3s;
-}
-a img {width:40px;height: 40px;}
-.product-container a img:hover {
-    border-color: #cc2eb7;
-    transform: scale(1.5);border-radius:100px;
-}
-
-/* تمييز الصورة عند مرور الماوس */
-.thumbnails img:hover {
-    border-color: #2ecc71;
-    transform: scale(2.1);
-}
-.main-img-box{width:300px;max-width: 300px; height: auto;transition: transform 0.3s ease;cursor: zoom-in;
-    object-fit: cover;}
-
-.main-img-box:hover{
-  transform: scale(1.5); /* تكبير الصورة لمرة ونصف حجمها */
-  z-index: 99;           /* عشان الصورة تطلع فوق العناصر اللي حولها */
-  position: relative;    /* ضرورية لتفعيل الـ z-index */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);} /* إضافة ظل خفيف للجمالية */
-  /* استخدام 768px للموبايل والتابلت */
 @media screen and (max-width: 768px) {
     
     /* لضمان عدم خروج أي عنصر عن حدود الشاشة */
-    * {
-        box-sizing: border-box;
-    }
+    * {box-sizing: border-box; }
 
     body {
-        overflow-x: hidden; /* منع التمرير الجانبي */
-    }
+        overflow-x: hidden; /* منع التمرير الجانبي */}
 
     .main {
         display: flex;
@@ -484,6 +344,7 @@ a img {width:40px;height: 40px;}
     .item a img:hover {
         transform: none; 
     }
+   }
 }
 /* حاوية المنتج */
 .product-container {
@@ -504,7 +365,7 @@ a img {width:40px;height: 40px;}
   padding: 10px 0;
   white-space: nowrap;
   display: flex;
-  
+ 
   /* --- كود التثبيت في الأعلى --- */
   object-view-box: calc();   /* يجعل الشريط ثابتاً */
   top: 0;            /* يلتصق بأعلى الشاشة تماماً */
@@ -516,7 +377,7 @@ a img {width:40px;height: 40px;}
 .marquee-content {
   display: flex;
   white-space: nowrap;
-  animation: scroll-to-right 7s linear infinite; /* سرعة الحركة */
+  animation: scroll-to-right 5s linear infinite; /* سرعة الحركة */
 }
 
 .marquee-content span {
