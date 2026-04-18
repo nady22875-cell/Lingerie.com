@@ -6,7 +6,7 @@ body {
     overflow-x: hidden; /* بيمنع التمرير العرضي تماماً */
     width: 100%;
 }
-body{100%;align-items:center}
+body{width: 100%;align-items:center}
 .main{background-color: rgb(255, 127, 206);display: flex;justify-content: space-between
   ;align-items: center;padding:0 20px;}
 .title{display: flex;align-items: center;gap: 35px;background-color: rgb(184, 28, 119);
@@ -37,7 +37,7 @@ body{100%;align-items:center}
     border-bottom: 5px solid #2ecc71; /* لمسة جمالية خضراء */
 }
 #contentList{display: flex;flex-wrap: wrap;justify-content: center;;gap: 70px;;padding:30px;align-items: stretch;
-    margin: 0 ;height: auto;   border-radius: 30px;
+    margin: 0 ;height: auto; border-radius: 30px;width:100%
     border-bottom: 5px solid #cc2ea4; /* لمسة جمالية خضراء */
 }
 .item p{text-align: center ;font-size: xx-large;}
@@ -281,6 +281,54 @@ a img {width:25px;height: 25px;}
     body {
         overflow-x: hidden; /* منع التمرير الجانبي */
     }
+    .marquee-content span img{width: 150px;border-radius:30px;gap:20px }
+.marquee-content span a img{width: 150px;height: auto; border-radius:30px;gap:20px }
+#contentList .marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background-color: #ff4d94; /* لون الخلفية */
+  color: white;
+  padding: 10px 0;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+ 
+  /* --- كود التثبيت في الأعلى --- */
+  object-view-box: calc();   /* يجعل الشريط ثابتاً */
+  top: 0;            /* يلتصق بأعلى الشاشة تماماً */
+  left: 0;           /* يبدأ من أقصى اليسار */
+  z-index: 9999;     /* يضمن ظهور الشريط فوق أي محتوى آخر في الموقع */
+  box-shadow: 0 15px 15px rgba(0,0,0,0.5); /* ظل خفيف لتمييز الشريط */
+}
+
+#contentList .marquee-content  {
+  gap: 50px;
+  display: flex;
+  white-space: nowrap;
+  animation: scroll-to-right 12s linear infinite; /* سرعة الحركة */
+}
+
+#contentList .marquee-content span {
+  font-size: 30px; /* حجم الخط */
+  font-weight: bold;
+  padding-right: 30px; /* المسافة بين النصين لضمان التتابع */
+  font-family: 'Arial', sans-serif;
+}
+
+/* حركة التتابع من اليسار لليمين */
+@keyframes scroll-to-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* توقف الحركة عند وضع الماوس */
+#contentList .marquee-wrapper:hover .marquee-content {
+  animation-play-state: paused;
+}
 
     .main {
         display: flex;
@@ -354,7 +402,7 @@ a img {width:25px;height: 25px;}
     gap: 5px;
     align-items: center;    border-radius: 20px;
     border-bottom: 5px solid #cc2e78; /* لمسة جمالية خضراء */
-    max-width: 350px;
+    max-width: 300px;
 }
 .product-container p{text-decoration: none;color: #333;font-size: large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
@@ -378,7 +426,7 @@ a img {width:25px;height: 25px;}
 .marquee-content {
   display: flex;
   white-space: nowrap;
-  animation: scroll-to-right 5s linear infinite; /* سرعة الحركة */
+  animation: scroll-to-right 12s linear infinite; /* سرعة الحركة */
 }
 
 .marquee-content span {
@@ -479,7 +527,7 @@ body {
   gap: 50px;
   display: flex;
   white-space: nowrap;
-  animation: scroll-to-right 7s linear infinite; /* سرعة الحركة */
+  animation: scroll-to-right 12s linear infinite; /* سرعة الحركة */
 }
 
 #contentList .marquee-content span {
@@ -503,3 +551,5 @@ body {
 #contentList .marquee-wrapper:hover .marquee-content {
   animation-play-state: paused;
 }
+.marquee{display:flex;
+  flex-wrap:wrap; space-between;gap:30px }
