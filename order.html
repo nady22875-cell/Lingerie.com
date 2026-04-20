@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تسجيل طلب جديد</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="form-side">
+        <h2>بيانات التواصل</h2>
+        <input type="text" id="cust_name" placeholder="الاسم بالكامل" required>
+        <input type="tel" id="cust_phone" placeholder="رقم الهاتف (واتساب)" required>
+        
+        <h2>تفاصيل العنوان</h2>
+        <input type="text" id="cust_address" placeholder="العنوان بالتفصيل" required>
+        <select id="city_select">
+            <option value="" data-price="0">اختر المحافظة لاستلام الشحن</option>
+            <option value="القاهرة" data-price="65">القاهرة (65 ج.م)</option>
+            <option value="الجيزة" data-price="65">الجيزة (65 ج.م)</option>
+            <option value="الإسكندرية" data-price="80">الإسكندرية (80 ج.م)</option>
+            <option value="الوجه البحري" data-price="90">الوجه البحري (90 ج.م)</option>
+        </select>
+
+        <button type="button" id="confirm_btn" class="submit-btn">تأكيد طلب الأوردر</button>
+    </div>
+
+    <div class="summary-side">
+        <h2>ملخص الطلب</h2>
+        <div class="line">
+            <span>سعر المنتج:</span>
+            <span>350 ج.م</span>
+        </div>
+        <div class="line">
+            <span>مصاريف الشحن:</span>
+            <span id="ship_cost">0 ج.م</span>
+        </div>
+        <div class="line total-line">
+            <span>الإجمالي:</span>
+            <span id="grand_total">350 ج.م</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 1. إعدادات المتغيرات الأساسية
+    const scriptURL = 'ضع_رابط_APP_SCRIPT_هنا'; // استبدله بالرابط الذي حصلت عليه من Deploy
+    const productPrice = 350;
+
+    const citySelect = document.getElementById('city_select');
+    const shipDisplay = document.getElementById('ship_cost');
+    const totalDisplay = document.getElementById('grand_total');
+    const confirmBtn = document.getElementById('confirm_btn');
+
+    // 2. تحديث الأسعار عند تغيير المحافظة
+    citySelect.addEventListener('change', () => {
+        const selectedOption = citySelect.options[citySelect.selectedIndex];
+        const shipping = parseInt(selectedOption.getAttribute('data-price')) || 0;
+        
+        shipDisplay.innerText = shipping + " ج.م";
+        totalDisplay.innerText = (productPrice + shipping) + " ج.م";
+    });
+
+    // 3. وظيفة إرسال البيانات لجوجل شيت
+    confirmBtn.addEventListener('click', () => {
+        // تجميع البيانات
+        const data = {
+            name: document.getElementById('cust_name').value,
+            phone: document.getElementById('cust_phone').value,
+            address: document.getElementById('cust_address').value,
+            city: citySelect.value,
+            total: totalDisplay.innerText
+        };
+
+        // التحقق من الخانات
+        if (!data.name || !data.phone || !data.city) {
+            alert("برجاء ملء البيانات الأساسية أولاً");
+            return;
+        }
+
+        // تعطيل الزر منعاً للتكرار
+        confirmBtn.disabled = true;
+        confirmBtn.innerText = "جاري الحفظ...";
+
+        // الإرسال الفعلي
+        fetch(scriptURL, {
+            method: 'POST',
+            mode: 'no-cors', // مهم لتجنب مشاكل الـ CORS مع جوجل
+            cache: 'no-cache',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(() => {
+            alert("تم تسجيل أوردرك بنجاح! سنتواصل معك قريباً.");
+            location.reload(); // إعادة تحميل الصفحة لتصفير البيانات
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            alert("حدث خطأ، حاول مرة أخرى");
+            confirmBtn.disabled = false;
+            confirmBtn.innerText = "تأكيد طلب الأوردر";
+        });
+    });
+</script>
+
+</body>
+</html>

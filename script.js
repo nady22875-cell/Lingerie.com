@@ -39,3 +39,46 @@ function changeImage(mainImageId, newSrc) {
         mainImg.style.opacity = '1';
     }, 150);
 }
+document.querySelector('.order-btn').addEventListener('click', function() {
+    // الرابط الصحيح داخل علامات تنصيص
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzrxvwiLSDlvTxy-pBQ7j3zbJeVGf8NPb6qkz8HnPDX2Y_6vNgjfZ-Nu0PsMmNJX3bt6g/exec';
+
+    const orderData = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        address: document.getElementById('address').value,
+        city: document.getElementById('city-select').value,
+        total: document.getElementById('final-total').innerText
+    };
+
+    if(!orderData.name || !orderData.phone) {
+        alert("برجاء إدخال الاسم ورقم الهاتف");
+        return;
+    }
+
+    const btn = document.querySelector('.order-btn');
+    btn.innerText = "جاري الحفظ...";
+    btn.disabled = true;
+
+    // الإرسال بطريقة متوافقة مع المتصفحات
+    fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors', 
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(orderData)
+    })
+    .then(() => {
+        alert("تم استلام طلبك بنجاح!");
+        btn.innerText = "تأكيد طلب الأوردر";
+        btn.disabled = false;
+        // مسح الخانات بعد النجاح
+        document.getElementById('name').value = "";
+        document.getElementById('phone').value = "";
+    })
+    .catch(err => {
+        console.error(err);
+        alert("خطأ في الاتصال، تأكد من إعدادات الـ Deploy في جوجل");
+        btn.disabled = false;
+        btn.innerText = "تأكيد طلب الأوردر";
+    });
+});
