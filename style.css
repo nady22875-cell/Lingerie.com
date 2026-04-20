@@ -6,9 +6,9 @@ body {
     overflow-x: hidden; /* بيمنع التمرير العرضي تماماً */
     width: 100%;
 }
-body{width: 100%;align-items:center}
+body{width: 100%;align-items:center ;gap: 30px; }
 .main{background-color: rgb(255, 127, 206);display: flex;justify-content: space-between
-  ;align-items: center;padding:0 20px;}
+  ;align-items: center;padding:0 70px;flex-direction: row-reverse}
 .title{display: flex;align-items: center;gap: 35px;background-color: rgb(184, 28, 119);
     border-radius: 15px;color: rgb(205, 202, 211);width: 250PX;padding:20px;text-align: center;}
     .title h1:hover{background-color: rgb(127, 255, 255);}
@@ -350,8 +350,8 @@ a img {width:25px;height: 25px;}
   width: 100%;
   overflow: hidden;
   background-color: #ff4d94; /* لون الخلفية */
-  color: white;
-  padding: 10px 0;
+  color: rgba(255, 255, 255, 0.397);
+  padding: 20px 0;
   white-space: nowrap;
   display: flex;
   
@@ -408,41 +408,36 @@ a img {width:25px;height: 25px;}
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
 .marquee-wrapper {
   width: 100%;
-  overflow: hidden;
-  background-color: #ff4d94; /* لون الخلفية */
+  overflow: hidden; /* يمنع ظهور النص خارج الشريط */
+  background-color: #cc2b6b;
   color: white;
   padding: 10px 0;
   white-space: nowrap;
-  display: flex;
- 
-  /* --- كود التثبيت في الأعلى --- */
-  object-view-box: calc();   /* يجعل الشريط ثابتاً */
-  top: 0;            /* يلتصق بأعلى الشاشة تماماً */
-  left: 0;           /* يبدأ من أقصى اليسار */
-  z-index: 9999;     /* يضمن ظهور الشريط فوق أي محتوى آخر في الموقع */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* ظل خفيف لتمييز الشريط */
 }
 
 .marquee-content {
-  display: flex;
+  gap:30px
+  justify-content: space-between;
+  display: inline-block;
   white-space: nowrap;
-  animation: scroll-to-right 12s linear infinite; /* سرعة الحركة */
+  /* استدعاء الحركة */
+  animation: scroll-right 20s linear infinite;
 }
 
 .marquee-content span {
-  font-size: 30px; /* حجم الخط */
+  font-size: 30px;
   font-weight: bold;
-  padding-right: 100px; /* المسافة بين النصين لضمان التتابع */
   font-family: 'Arial', sans-serif;
+  display: inline-block;
 }
 
-/* حركة التتابع من اليسار لليمين */
-@keyframes scroll-to-right {
-  0% {
-    transform: translateX(-50%);
+/* الحركة: من اليسار (خارج الشاشة) إلى اليمين (خارج الشاشة) */
+@keyframes scroll-right {
+  from {
+    transform: translateX(-70%); /* يبدأ من أقصى اليسار مختفياً */
   }
-  100% {
-    transform: translateX(0);
+  to {
+    transform: translateX(100vw); /* ينتهي عند أقصى اليمين (عرض الشاشة بالكامل) */
   }
 }
 
@@ -450,7 +445,6 @@ a img {width:25px;height: 25px;}
 .marquee-wrapper:hover .marquee-content {
   animation-play-state: paused;
 }
-
 /* نصيحة تقنية: أضف padding-top لجسم الصفحة (body) 
    حتى لا يغطي الشريط الثابت المحتوى الموجود في أعلى موقعك */
 body {
@@ -527,13 +521,13 @@ body {
   gap: 50px;
   display: flex;
   white-space: nowrap;
-  animation: scroll-to-right 12s linear infinite; /* سرعة الحركة */
+  animation: scroll-to-right 10s linear infinite; /* سرعة الحركة */
 }
 
 #contentList .marquee-content span {
   font-size: 30px; /* حجم الخط */
   font-weight: bold;
-  padding-right: 30px; /* المسافة بين النصين لضمان التتابع */
+  padding-right: 0px; /* المسافة بين النصين لضمان التتابع */
   font-family: 'Arial', sans-serif;
 }
 
@@ -542,7 +536,7 @@ body {
   0% {
     transform: translateX(-50%);
   }
-  100% {
+  70% {
     transform: translateX(0);
   }
 }
@@ -552,8 +546,8 @@ body {
   animation-play-state: paused;
 }
 .marquee{display:flex;
-  flex-wrap:wrap; space-between;gap:30px }
-* { box-sizing: border-box; margin: 0; padding: 0; }
+  flex-wrap:wrap; space-between;gap:20px }
+* { box-sizing: border-box; margin: 5; padding: 0; }
 body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, sans-serif; direction: rtl; }
 .container { display: flex; flex-wrap: wrap; max-width: 1000px; margin: 20px auto; gap: 20px; padding: 15px; }
 .form-side, .summary-side { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
@@ -567,3 +561,34 @@ input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px sol
 .submit-btn { width: 100%; background: #27ae60; color: white; border: none; padding: 15px; border-radius: 6px; cursor: pointer; font-size: 1.1rem; font-weight: bold; transition: 0.3s; }
 .submit-btn:hover { background: #219150; }
 .submit-btn:disabled { background: #ccc; cursor: not-allowed; }
+/* الحاوية الرئيسية للأزرار */
+.nav-container {
+    display: flex;
+    justify-content: center; /* تجميع الأزرار في المنتصف */
+    align-items: center;
+    gap: 15px; /* مسافة متساوية بين كل زر والآخر */
+    flex-wrap: wrap; /* لجعل الأزرار تنزل لسطر جديد في الشاشات الصغيرة */
+    padding: 10px;
+}
+
+/* تصميم الزر نفسه */
+.nav-container a {
+    text-decoration: none;
+    color: white;
+    background-color: #4b0082; /* اللون البنفسجي */
+    padding: 10px 25px; /* زيادة المساحة داخل الزر لمنع قص النص */
+    border-radius: 50px; /* حواف دائرية بالكامل لشكل عصري */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease; /* حركة ناعمة عند التفاعل */
+    white-space: nowrap; /* يمنع انقسام النص لسطرين داخل الزر */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* ظل خفيف */
+}
+
+/* تأثير عند مرور الماوس */
+.nav-container a:hover {
+    background-color: #cc2b6b; /* يتغير للون البينك عند الوقوف عليه */
+    transform: translateY(-3px); /* يرتفع للأعلى قليلاً */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
