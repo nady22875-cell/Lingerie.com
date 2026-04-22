@@ -316,12 +316,12 @@ a img {width:25px;height: 25px;}
 }
 
 /* حركة التتابع من اليسار لليمين */
-@keyframes scroll-to-right {
-  0% {
-    transform: translateX(-50%);
+@keyframes scroll-right {
+  from {
+    transform: translateX(-5%); /* يبدأ من أقصى اليسار مختفياً */
   }
-  100% {
-    transform: translateX(0);
+  to {
+    transform: translateX(80vw); /* ينتهي عند أقصى اليمين (عرض الشاشة بالكامل) */
   }
 }
 
@@ -421,7 +421,7 @@ a img {width:25px;height: 25px;}
   display: inline-block;
   white-space: nowrap;
   /* استدعاء الحركة */
-  animation: scroll-right 20s linear infinite;
+  animation: scroll-right 15s linear infinite;
 }
 
 .marquee-content span {
