@@ -197,8 +197,8 @@ justify-content: space-between;white-space: calc();}
 }
 a img {width:25px;height: 25px;}
 .product-container a img:hover {
-    border-color: #2ecc71;
-    transform: scale(1.5);border-radius:100px;
+    border-color: #cc2e85;
+    transform: scale(1.2);border-radius:50px;
 }
 
 /* تمييز الصورة عند مرور الماوس */
@@ -210,7 +210,7 @@ a img {width:25px;height: 25px;}
     object-fit: cover;}
 
 .main-img-box:hover{
-  transform: scale(1.5); /* تكبير الصورة لمرة ونصف حجمها */
+  transform: scale(1.2); /* تكبير الصورة لمرة ونصف حجمها */
   z-index: 99;           /* عشان الصورة تطلع فوق العناصر اللي حولها */
   position: relative;    /* ضرورية لتفعيل الـ z-index */
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);} /* إضافة ظل خفيف للجمالية */
@@ -260,7 +260,7 @@ a img {width:25px;height: 25px;}
         margin-bottom: 20px;
     }
 
-    .item img {
+    .item a img {
         width: 100% !important; /* إجبار الصورة على أخذ عرض الشاشة */
         height: auto !important;
         display: block;
@@ -281,49 +281,62 @@ a img {width:25px;height: 25px;}
     body {
         overflow-x: hidden; /* منع التمرير الجانبي */
     }
-    .marquee-content span img{width: 150px;border-radius:30px;gap:20px }
-.marquee-content span a img{width: 150px;height: auto; border-radius:30px;gap:20px }
+/* تنسيق الصور داخل الشريط */
+.marquee-content span img, 
+.marquee-content span a img {
+    width: 150px;
+    height: auto;
+    border-radius: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px; /* بدلاً من gap لأنها لا تعمل داخل الـ span أحياناً */
+}
 #contentList .marquee-wrapper {
   width: 100%;
   overflow: hidden;
-  background-color: #ff4d94; /* لون الخلفية */
-  color: white;
-  padding: 10px 0;
+  background-color: #ff4d94;
+  position: fixed; /* التثبيت في الأعلى */
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  padding: 15px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.marquee-content {
+  display: inline-flex; /* مهم جداً ليكون العرض على قد المحتوى */
   white-space: nowrap;
-  display: flex;
-  align-items: center;
- 
-  /* --- كود التثبيت في الأعلى --- */
-  object-view-box: calc();   /* يجعل الشريط ثابتاً */
-  top: 0;            /* يلتصق بأعلى الشاشة تماماً */
-  left: 0;           /* يبدأ من أقصى اليسار */
-  z-index: 9999;     /* يضمن ظهور الشريط فوق أي محتوى آخر في الموقع */
-  box-shadow: 0 15px 15px rgba(0,0,0,0.5); /* ظل خفيف لتمييز الشريط */
+  animation: scroll-continuous 15s linear infinite; /* سرعة هادئة */
 }
 
-#contentList .marquee-content  {
-  gap: 50px;
-  display: flex;
-  white-space: nowrap;
-  animation: scroll-to-right 12s linear infinite; /* سرعة الحركة */
-}
-
-#contentList .marquee-content span {
-  font-size: 30px; /* حجم الخط */
-  font-weight: bold;
-  padding-right: 30px; /* المسافة بين النصين لضمان التتابع */
-  font-family: 'Arial', sans-serif;
-}
-
-/* حركة التتابع من اليسار لليمين */
-@keyframes scroll-right {
+/* التعديل الجوهري هنا: الحركة تبدأ من الصفر وتتحرك بعرض المحتوى نفسه */
+@keyframes scroll-continuous {
   from {
-    transform: translateX(-5%); /* يبدأ من أقصى اليسار مختفياً */
+    transform: translateX(100vw); /* يبدأ من خارج الشاشة يميناً */
   }
   to {
-    transform: translateX(80vw); /* ينتهي عند أقصى اليمين (عرض الشاشة بالكامل) */
+    transform: translateX(-100%); /* ينتهي عندما يختفي آخر حرف يساراً */
   }
 }
+
+/* تنسيق العناصر الداخلية */
+.marquee-content span {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  padding-right: 50px;
+}
+
+.marquee-content img {
+  width: 120px;
+  height: auto;
+  border-radius: 20px;
+}
+
+
 
 /* توقف الحركة عند وضع الماوس */
 #contentList .marquee-wrapper:hover .marquee-content {
@@ -532,12 +545,12 @@ body {
 }
 
 /* حركة التتابع من اليسار لليمين */
-@keyframes scroll-to-right {
-  0% {
-    transform: translateX(-50%);
+@keyframes scroll-right {
+  from {
+    transform: translateX(-80%); /* يبدأ من أقصى اليسار مختفياً */
   }
-  70% {
-    transform: translateX(0);
+  to {
+    transform: translateX(100vw); /* ينتهي عند أقصى اليمين (عرض الشاشة بالكامل) */
   }
 }
 
