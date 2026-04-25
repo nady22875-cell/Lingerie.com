@@ -423,10 +423,11 @@ a img {width:25px;height: 25px;}
   width: 100%;
   overflow: hidden; /* يمنع ظهور النص خارج الشريط */
   background-color: #cc2b6b;
-  color: white;
-  padding: 10px 0;
+  color: rgb(15, 15, 15);
+  padding: 5px;
   white-space: nowrap;
 }
+.marquee-wrapper a{color: #fdfdfd;}
 
 .marquee-content {
   gap:30px
@@ -434,7 +435,7 @@ a img {width:25px;height: 25px;}
   display: inline-block;
   white-space: nowrap;
   /* استدعاء الحركة */
-  animation: scroll-right 15s linear infinite;
+  animation: scroll-right 20s linear infinite;
 }
 
 .marquee-content span {
@@ -442,15 +443,16 @@ a img {width:25px;height: 25px;}
   font-weight: bold;
   font-family: 'Arial', sans-serif;
   display: inline-block;
+  
 }
 
 /* الحركة: من اليسار (خارج الشاشة) إلى اليمين (خارج الشاشة) */
-@keyframes scroll-right {
+@keyframes slide-right {
   from {
-    transform: translateX(-70%); /* يبدأ من أقصى اليسار مختفياً */
+    transform: translateX(0);
   }
   to {
-    transform: translateX(100vw); /* ينتهي عند أقصى اليمين (عرض الشاشة بالكامل) */
+    transform: translateX(200px);
   }
 }
 
@@ -534,13 +536,13 @@ body {
   gap: 50px;
   display: flex;
   white-space: nowrap;
-  animation: scroll-to-right 10s linear infinite; /* سرعة الحركة */
+  animation: scroll-to-right 1s linear infinite; /* سرعة الحركة */
 }
 
 #contentList .marquee-content span {
   font-size: 30px; /* حجم الخط */
   font-weight: bold;
-  padding-right: 0px; /* المسافة بين النصين لضمان التتابع */
+  padding-right: 5px; /* المسافة بين النصين لضمان التتابع */
   font-family: 'Arial', sans-serif;
 }
 
@@ -550,7 +552,7 @@ body {
     transform: translateX(-80%); /* يبدأ من أقصى اليسار مختفياً */
   }
   to {
-    transform: translateX(100vw); /* ينتهي عند أقصى اليمين (عرض الشاشة بالكامل) */
+    transform: translateX(120vw); /* ينتهي عند أقصى اليمين (عرض الشاشة بالكامل) */
   }
 }
 
