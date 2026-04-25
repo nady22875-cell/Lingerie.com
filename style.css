@@ -427,7 +427,8 @@ a img {width:25px;height: 25px;}
   padding: 5px;
   white-space: nowrap;
 }
-.marquee-wrapper a{color: #fdfdfd;}
+.marquee-wrapper a{color: #fdfdfd;
+text-decoration: none;}
 
 .marquee-content {
   gap:30px
