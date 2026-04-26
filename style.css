@@ -281,67 +281,43 @@ a img {width:25px;height: 25px;}
     body {
         overflow-x: hidden; /* منع التمرير الجانبي */
     }
-/* تنسيق الصور داخل الشريط */
-.marquee-content span img, 
-.marquee-content span a img {
-    width: 150px;
-    height: auto;
-    border-radius: 30px;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 10px; /* بدلاً من gap لأنها لا تعمل داخل الـ span أحياناً */
-}
-#contentList .marquee-wrapper {
+.marquee-content span a img{width: 200px;height: auto; border-radius:30px;gap:20px }
+.marquee-wrapper {
   width: 100%;
   overflow: hidden;
-  background-color: #ff4d94;
-  position: fixed; /* التثبيت في الأعلى */
-  top: 0;
-  left: 0;
-  z-index: 9999;
+  background-color: #cc2b6b;
+  color: #fdfdfd;
   padding: 15px 0;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  white-space: nowrap;
+  direction: ltr; /* لضمان أن الترتيب يبدأ من اليسار لليمين */
 }
 
 .marquee-content {
-  display: inline-flex; /* مهم جداً ليكون العرض على قد المحتوى */
+  display: inline-block;
   white-space: nowrap;
-  animation: scroll-continuous 15s linear infinite; /* سرعة هادئة */
+  /* تحريك لليمين */
+  animation: scroll-right 25s linear infinite;
 }
 
-/* التعديل الجوهري هنا: الحركة تبدأ من الصفر وتتحرك بعرض المحتوى نفسه */
-@keyframes scroll-continuous {
-  from {
-    transform: translateX(100vw); /* يبدأ من خارج الشاشة يميناً */
-  }
-  to {
-    transform: translateX(-100%); /* ينتهي عندما يختفي آخر حرف يساراً */
-  }
-}
-
-/* تنسيق العناصر الداخلية */
 .marquee-content span {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
-  color: white;
+  font-family: 'Arial', sans-serif;
   padding-right: 50px;
 }
+.marquee-content span a{color:#333
+;text-decoration: none;}
 
-.marquee-content img {
-  width: 120px;
-  height: auto;
-  border-radius: 20px;
+/* الحركة لليمين بدون فراغ زمني */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%); /* يبدأ من المنتصف المكرر */
+  }
+  100% {
+    transform: translateX(0); /* ينتهي عند البداية مما يخلق حلقة متصلة */
+  }
 }
 
-
-
-/* توقف الحركة عند وضع الماوس */
-#contentList .marquee-wrapper:hover .marquee-content {
-  animation-play-state: paused;
-}
 
     .main {
         display: flex;
@@ -419,53 +395,49 @@ a img {width:25px;height: 25px;}
 }
 .product-container p{text-decoration: none;color: #333;font-size: large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+.marquee-content span a img{width: 200px;height: auto; border-radius:30px;gap:20px }
 .marquee-wrapper {
   width: 100%;
-  overflow: hidden; /* يمنع ظهور النص خارج الشريط */
+  overflow: hidden;
   background-color: #cc2b6b;
-  color: rgb(15, 15, 15);
-  padding: 5px;
+  color: #fdfdfd;
+  padding: 15px 0;
   white-space: nowrap;
+  direction: ltr; /* لضمان أن الترتيب يبدأ من اليسار لليمين */
 }
-.marquee-wrapper a{color: #fdfdfd;
-text-decoration: none;}
 
 .marquee-content {
-  gap:30px
-  justify-content: space-between;
   display: inline-block;
   white-space: nowrap;
-  /* استدعاء الحركة */
-  animation: scroll-right 20s linear infinite;
+  /* تحريك لليمين */
+  animation: scroll-right 25s linear infinite;
 }
 
 .marquee-content span {
   font-size: 30px;
   font-weight: bold;
   font-family: 'Arial', sans-serif;
-  display: inline-block;
-  
+  padding-right: 50px;
+}
+.marquee-content span a{color:#333
+;text-decoration: none;}
+
+/* الحركة لليمين بدون فراغ زمني */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%); /* يبدأ من المنتصف المكرر */
+  }
+  100% {
+    transform: translateX(0); /* ينتهي عند البداية مما يخلق حلقة متصلة */
+  }
 }
 
-/* الحركة: من اليسار (خارج الشاشة) إلى اليمين (خارج الشاشة) */
-@keyframes slide-right {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(200px);
-  }
-}
-
-/* توقف الحركة عند وضع الماوس */
 .marquee-wrapper:hover .marquee-content {
   animation-play-state: paused;
 }
 /* نصيحة تقنية: أضف padding-top لجسم الصفحة (body) 
    حتى لا يغطي الشريط الثابت المحتوى الموجود في أعلى موقعك */
-body {
-  padding-top: 10px; 
-}
+
 .social-float-wrapper {
     position: fixed;
     bottom: 30px;
@@ -512,54 +484,8 @@ body {
 }
 
 
-.marquee-content span img{width: 200px;border-radius:30px;gap:20px }
-.marquee-content span a img{width: 200px;height: auto; border-radius:30px;gap:20px }
-#contentList .marquee-content span {gap:70px }
-#contentList .marquee-wrapper {
-  width: 100%;
-  overflow: hidden;
-  background-color: #ff4d94; /* لون الخلفية */
-  color: white;
-  padding: 10px 0;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
- 
-  /* --- كود التثبيت في الأعلى --- */
-  object-view-box: calc();   /* يجعل الشريط ثابتاً */
-  top: 0;            /* يلتصق بأعلى الشاشة تماماً */
-  left: 0;           /* يبدأ من أقصى اليسار */
-  z-index: 9999;     /* يضمن ظهور الشريط فوق أي محتوى آخر في الموقع */
-  box-shadow: 0 15px 15px rgba(0,0,0,0.5); /* ظل خفيف لتمييز الشريط */
-}
 
-#contentList .marquee-content  {
-  gap: 50px;
-  display: flex;
-  white-space: nowrap;
-  animation: scroll-to-right 1s linear infinite; /* سرعة الحركة */
-}
 
-#contentList .marquee-content span {
-  font-size: 30px; /* حجم الخط */
-  font-weight: bold;
-  padding-right: 5px; /* المسافة بين النصين لضمان التتابع */
-  font-family: 'Arial', sans-serif;
-}
-
-/* حركة التتابع من اليسار لليمين */
-@keyframes scroll-right {
-  from {
-    transform: translateX(-80%); /* يبدأ من أقصى اليسار مختفياً */
-  }
-  to {
-    transform: translateX(120vw); /* ينتهي عند أقصى اليمين (عرض الشاشة بالكامل) */
-  }
-}
-
-/* توقف الحركة عند وضع الماوس */
-#contentList .marquee-wrapper:hover .marquee-content {
-  animation-play-state: paused;
 }
 .marquee{display:flex;
   flex-wrap:wrap; space-between;gap:20px }
