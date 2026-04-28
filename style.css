@@ -534,3 +534,32 @@ input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px sol
     transform: translateY(-3px); /* يرتفع للأعلى قليلاً */
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
+.product-price {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* لتوسط العناصر تحت الصورة */
+    gap: 8px; /* مسافة بين العناصر */
+    direction: rtl; /* لضمان الترتيب من اليمين لليسار */
+    margin-top: 5px;
+}
+
+.current-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e44d26; /* لون السعر الجديد */
+}
+
+.old-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through; /* الخط المشطوب */
+}
+
+.discount-tag {
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
